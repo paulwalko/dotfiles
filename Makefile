@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases
+home_symlinks = aliases Xresources
 
 config_copy = 
 
@@ -9,7 +9,7 @@ config_symlinks =
 
 all: install
 
-install: aliases
+install: aliases Xresources
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

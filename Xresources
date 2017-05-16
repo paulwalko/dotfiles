@@ -1,2 +1,9 @@
-XTerm*Background: black
-XTerm*Foreground: orange
+urxvt*scrollBar:	false
+
+urxvt*background:	black
+urxvt*foreground:	orange
+urxvt.transparent:	true
+urxvt.shading:		30
+
+urxvt*font:		xft:DejaVuSansMono:pixelsize=14
+urxvt*boldFont:		xft:DejaVuSansMono:pixelsize=14

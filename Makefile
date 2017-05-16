@@ -5,11 +5,11 @@ home_symlinks = aliases Xresources
 
 config_copy = 
 
-config_symlinks = 
+config_symlinks = xmonad
 
 all: install
 
-install: aliases Xresources
+install: aliases Xresources xmonad
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

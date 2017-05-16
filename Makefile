@@ -1,11 +1,11 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources
+home_symlinks = aliases Xresources xmonad
 
 config_copy = 
 
-config_symlinks = xmonad
+config_symlinks =
 
 all: install
 

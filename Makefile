@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xmonad
+home_symlinks = aliases Xresources xmonad xinitrc
 
 config_copy = 
 
@@ -9,7 +9,7 @@ config_symlinks =
 
 all: install
 
-install: aliases Xresources xmonad
+install: aliases Xresources xmonad xinitrc
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

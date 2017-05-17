@@ -48,16 +48,14 @@ main = do
     dzenLeftBar <- spawnPipe myXmonadBar
     dzenRightBar <- spawnPipe myStatusBar
     setRandomWallpaper ["$HOME/images/wallpaper"]
-    xmonad $ defaultConfig
+    xmonad $ fullscreenSupport defaultConfig
         { terminal        = myTerminal
         , layoutHook      = myLayoutHook
         , borderWidth     = myBorderWidth
-        , logHook             = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
+        , logHook         = myLogHook dzenLeftBar >> fadeInactiveLogHook 0xdddddddd
         , handleEventHook = mconcat
             [ docksEventHook
-            , handleEventHook defaultConfig <+> fullscreenEventHook]
-        -- Video hax
-        , manageHook      = manageDocks <+> manageHook defaultConfig
+            , handleEventHook  defaultConfig]
         } `additionalKeys` myAdditionalKeys
 --}}}
 

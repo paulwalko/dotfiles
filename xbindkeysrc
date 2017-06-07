@@ -27,3 +27,6 @@
 
 "xbacklight -set 100"
 	XF86Explorer
+
+"i3lock"
+	Super_L

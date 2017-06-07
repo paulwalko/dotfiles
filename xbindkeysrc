@@ -9,3 +9,21 @@
 
 "amixer set Capture toggle"
 	XF86AudioMicMute
+
+"xbacklight -inc 5"
+	XF86MonBrightnessUp
+
+"xbacklight -dec 5"
+	XF86MonBrightnessDown
+
+"xbacklight -set 1"
+	XF86Tools
+
+"xbacklight -set 40"
+	XF86Search
+
+"xbacklight -set 75"
+	XF86LaunchA
+
+"xbacklight -set 100"
+	XF86Explorer

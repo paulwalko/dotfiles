@@ -1,13 +1,13 @@
-"amixer set Master 5%+"
+"amixer -c 1 set Master 5%+"
 	XF86AudioRaiseVolume
 
-"amixer set Master 5%-"
+"amixer -c 1 set Master 5%-"
 	XF86AudioLowerVolume
 
-"amixer set Master toggle"
+"amixer -c 1 set Master toggle && amixer -c 1 set Speaker unmute"
 	XF86AudioMute
 
-"amixer set Capture toggle"
+"amixer -c 1 set Capture toggle"
 	XF86AudioMicMute
 
 "xbacklight -inc 5"

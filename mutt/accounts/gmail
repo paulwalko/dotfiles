@@ -1,0 +1,6 @@
+set from	= "paulsw.pw@gmail.com"
+set sendmail	= "/usr/bin/msmtp -a gmail"
+set mbox	= "+gmail/archive"
+set postponed	= "+gmail/drafts"
+
+color status	red default

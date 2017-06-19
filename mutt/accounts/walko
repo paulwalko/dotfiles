@@ -1,0 +1,6 @@
+set from	= "paul@walko.org"
+set sendmail	= "/usr/bin/msmtp -a walko"
+set mbox	= "+walko/archive"
+set postponed	= "+walko/drafts"
+
+color status	cyan default

@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xbindkeysrc xinitrc
+home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc mutt zprofile zshrc
 
 config_copy = 
 

@@ -8,3 +8,4 @@ Jun 18 19:20:13 host=smtp.gmail.com tls=on auth=on user=pwalko@vt.edu from=pwalk
 Jun 18 19:37:38 host=smtp.gmail.com tls=on auth=on user=pwalko@vt.edu from=pwalko@vt.edu recipients=paul@walko.org mailsize=1546 smtpstatus=250 smtpmsg='250 2.0.0 OK 1497829059 r9sm6148728qtr.31 - gsmtp' exitcode=EX_OK
 Jun 18 20:17:05 host=smtp.gmail.com tls=on auth=on user=pwalko@vt.edu from=pwalko@vt.edu recipients=paulsw.pw@gmail.com mailsize=579645 smtpstatus=250 smtpmsg='250 2.0.0 OK 1497831426 g6sm5462018qkb.48 - gsmtp' exitcode=EX_OK
 Jun 18 20:55:43 host=smtp.gmail.com tls=on auth=on user=pwalko@vt.edu from=pwalko@vt.edu recipients=joe@walko.org mailsize=1411 smtpstatus=250 smtpmsg='250 2.0.0 OK 1497833744 u9sm6164611qtb.29 - gsmtp' exitcode=EX_OK
+Jun 19 00:55:53 host=smtp.gmail.com tls=on auth=on user=paulsw.pw@gmail.com from=paulsw.pw@gmail.com recipients=pwalko@vt.edu mailsize=77 smtpstatus=250 smtpmsg='250 2.0.0 OK 1497848154 a68sm3950810ywe.6 - gsmtp' exitcode=EX_OK

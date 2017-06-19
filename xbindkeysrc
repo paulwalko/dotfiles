@@ -10,22 +10,22 @@
 "amixer -c 1 set Capture toggle"
 	XF86AudioMicMute
 
-"xbacklight -inc 5"
+"light -A 5"
 	XF86MonBrightnessUp
 
-"xbacklight -dec 5"
+"light -U 5"
 	XF86MonBrightnessDown
 
-"xbacklight -set 1"
+"light -S 1"
 	XF86Tools
 
-"xbacklight -set 40"
+"light -S 50"
 	XF86Search
 
-"xbacklight -set 75"
+"light -S 100"
 	XF86LaunchA
 
-"xbacklight -set 100"
+"chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk"
 	XF86Explorer
 
 "i3lock"

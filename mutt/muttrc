@@ -48,15 +48,18 @@ macro pager		\Cu "|urlview<enter>" "call urlview to open links"
 set spoolfile		= "+vt/INBOX"
 
 mailboxes		+vt/INBOX \
-			+gmail/INBOX \
 			+walko/INBOX \
-			+gmail/updates \
-			+gmail/social \
-			+vt/xen-devel \
-			+vt/OCVT \
-			+vt/CISCO \
-			+vt/SWAT 	
-
+			+gmail/INBOX \
+			+vt/9_fall17 \
+			+vt/A_vtluug \
+			+vt/B_ocvt \
+			+vt/N_misc.cisco \
+			+vt/Z_xen-devel \
+			+walko/0_updates \
+			+walko/1_social \
+			+gmail/0_updates \
+			+gmail/1_social \
+			
 folder-hook vt/*	source ~/.mutt/accounts/vt
 folder-hook walko/*	source ~/.mutt/accounts/walko
 folder-hook gmail/*	source ~/.mutt/accounts/gmail

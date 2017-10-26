@@ -31,12 +31,9 @@ endif
 set number
 set relativenumber
 
-" Syntax highlighting (for netrw)
+" Syntax highlighting
 syntax enable
 filetype plugin on
-
-" Syntax highlighting on buffer close bugfix
-set hidden
 
 " Fuzzy Finding
 set path+=**

@@ -1,11 +1,8 @@
 """ Start vim.plug
-call plug#begin('~/.vim/plugged')
+execute pathogen#infect()
 
 
 """ Syntastic
-" Start syntastic
-Plug 'vim-syntastic/syntastic'
-
 " Recommended settings
 set statusline+=%#warning#
 set statusline+=${SyntasticStatuslineFlag()}
@@ -14,6 +11,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 """ General Settings
@@ -39,12 +37,9 @@ filetype plugin on
 set path+=**
 set wildmenu
 
+
 """ NOTES:
 " AUTOCOMPLETE:
 " - ^x^n for JUST this file
 " - ^x^f for filenames
 " - ^n for anything specified by the 'complete' option
-
-
-""" End vim.plug
-call plug#end()

@@ -5,13 +5,19 @@ execute pathogen#infect()
 """ Syntastic
 " Recommended settings
 set statusline+=%#warning#
-set statusline+=${SyntasticStatuslineFlag()}
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+function! SyntasticCheckHook(errors)
+    if !empty(a:errors)
+        let g:syntastic_loc_list_height = min([len(a:errors), 10])
+    endif
+endfunction
 
 
 """ General Settings
@@ -29,6 +35,9 @@ endif
 set number
 set relativenumber
 
+" Autoindent
+set autoindent
+
 " Syntax highlighting
 syntax enable
 filetype plugin on
@@ -37,9 +46,8 @@ filetype plugin on
 set path+=**
 set wildmenu
 
-
-""" NOTES:
-" AUTOCOMPLETE:
-" - ^x^n for JUST this file
-" - ^x^f for filenames
-" - ^n for anything specified by the 'complete' option
+" Window stuff
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l

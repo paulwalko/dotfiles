@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc
+home_symlinks = vimrc vim bash_profile
 
 config_copy = 
 
@@ -9,7 +9,7 @@ config_symlinks =
 
 all: install
 
-install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc
+install: vimrc vim bash_profile
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

@@ -51,7 +51,7 @@ ZSH_THEME="steeef"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +86,14 @@ source $ZSH/oh-my-zsh.sh
 
 export GPG_TTY=$(tty)
 source ~/.aliases
+
+##  Vim stuff
+# Reduce delay swithing between normal & insert mode
+export KEYTIMEOUT=1
+
+# Use vim cli mode
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward 
+
+# ctrl-w removed word backwards
+bindkey '^w' backward-kill-word

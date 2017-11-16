@@ -92,8 +92,8 @@ source ~/.aliases
 export KEYTIMEOUT=1
 
 # Use vim cli mode
-bindkey '^P' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward 
+bindkey '^K' history-beginning-search-backward
+bindkey '^J' history-beginning-search-forward 
 
 # ctrl-w removed word backwards
 bindkey '^w' backward-kill-word

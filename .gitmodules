@@ -1,9 +1,12 @@
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "vim/bundle/vim-unimpaired"]
-	path = vim/bundle/vim-unimpaired
+[submodule "vim/pack/plugins/opt/vim-solarized8"]
+	path = vim/pack/plugins/opt/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "vim/pack/plugins/start/vim-unimpaired"]
+	path = vim/pack/plugins/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/pack/plugins/start/supertab"]
+	path = vim/pack/plugins/start/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/pack/plugins/start/syntastic"]
+	path = vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

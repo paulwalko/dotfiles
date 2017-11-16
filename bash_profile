@@ -5,13 +5,13 @@
 #exec /bin/zsh -l
 
 if [[ -z $TMUX ]]; then
-    if [ -e /usr/share/terminfo/x/xterm-256color ]; then # may be xterm-256 depending on your distro
+    if [ -e /usr/share/terminfo/r/rxvt-256color ]; then # may be xterm-256 depending on your distro
         export TERM='rxvt-256color'
     else
         export TERM='rxvt'
     fi
 else
-    if [ -e /usr/share/terminfo/s/screen-256color ]; then
+    if [ -e /usr/share/terminfo/s/screen.xterm-256color ]; then
         export TERM='screen-256color'
     else
         export TERM='screen'

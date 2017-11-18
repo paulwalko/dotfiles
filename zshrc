@@ -1,7 +1,7 @@
 ### ZSH Config
 
 ## Path to your oh-my-zsh installation.
-export ZSH=/home/paul/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="steeef"
@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 ### User configuration
-source ~/.aliases
+source $HOME/.aliases
 
 ## GPG Auth method
 export GPG_TTY=$(tty)

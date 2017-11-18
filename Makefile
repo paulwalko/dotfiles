@@ -12,7 +12,7 @@ all:
 
 local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh
 
-remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh
+remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh zprofile
 
 noroot_install: bash_profile
 

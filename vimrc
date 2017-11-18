@@ -44,7 +44,6 @@ syntax enable
 set background=dark
 colorscheme solarized8
 filetype plugin on
-set termguicolors
 
 " Fuzzy Finding
 set path+=**

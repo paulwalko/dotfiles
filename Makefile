@@ -10,12 +10,13 @@ config_symlinks = termite dircolors-solarized
 
 all: 
 
-local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap termite dircolors-solarized oh-my-zsh
+local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh
 
 remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh
 
 noroot_install: bash_profile
 
+ctrl_install: Xmodmap
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

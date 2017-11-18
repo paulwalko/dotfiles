@@ -1,4 +1,5 @@
 # My dark theme
 
 [colors]
-color0 = #000000 
+foreground = orange
+background = black

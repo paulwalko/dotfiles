@@ -6,7 +6,7 @@ if [[ -z $TMUX ]]; then
         export TERM='xterm'
     fi
 else
-    if [ -e /usr/share/terminfo/s/screen.xterm-256color ]; then
+    if [ -e /usr/share/terminfo/s/screen-256color ]; then
         export TERM='screen-256color'
     else
         export TERM='screen'

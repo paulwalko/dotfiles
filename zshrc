@@ -1,5 +1,8 @@
 ### ZSH Config
 
+## Set TERM
+export TERM=xterm-256color
+
 ## For local binaries (vim 8)
 export PATH=$HOME/.local/bin:$PATH
 

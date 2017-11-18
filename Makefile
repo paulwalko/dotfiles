@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap bash_profile oh-my-zsh
+home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap oh-my-zsh bashrc
 
 config_copy = 
 
@@ -12,7 +12,10 @@ all:
 
 local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap termite dircolors-solarized oh-my-zsh
 
-remote_install: bash_profile vim vimrc dircolors-solarized zshrc aliases oh-my-zsh
+remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh
+
+noroot_install: bashrc
+
 
 .PHONY: $(home_symlinks)
 $(home_symlinks):

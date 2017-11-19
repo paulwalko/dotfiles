@@ -42,7 +42,7 @@ set autoindent
 " Colors
 syntax enable
 set background=dark
-colorscheme solarized8
+colorscheme gotham256
 filetype plugin on
 
 " Fuzzy Finding

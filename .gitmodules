@@ -16,3 +16,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "vim/pack/plugins/opt/vim-gotham"]
+	path = vim/pack/plugins/opt/vim-gotham
+	url = https://github.com/whatyouhide/vim-gotham.git

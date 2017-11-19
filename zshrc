@@ -2,17 +2,9 @@
 
 ## Set TERM for proper colors
 if [[ -z $TMUX ]]; then
-    if [ -e /usr/share/terminfo/x/xterm-256color ]; then # may be xterm-256 depending on your distro
-        export TERM='xterm-256color'
-    else
-        export TERM='xterm'
-    fi
+    export TERM='xterm-256color'
 else
-    if [ -e /usr/share/terminfo/s/screen-256color ]; then
-        export TERM='screen-256color'
-    else
-        export TERM='screen'
-    fi
+    export TERM='screen-256color'
 fi
 
 ### For local binaries (vim 8)

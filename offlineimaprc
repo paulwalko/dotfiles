@@ -1,7 +1,7 @@
 [general]
 ui              = ttyui
-accounts        = vt, walko, gmail
-maxsyncaccounts = 3
+accounts        = vt, walko, gmail, vtluug
+maxsyncaccounts = 4
 pythonfile      = ~/.mutt/offlineimap.py
 
 ############################
@@ -27,9 +27,16 @@ remoterepository    = gmail-remote
 autorefresh         = 0.5
 quick               = 10
 
+# vtluug
+[Account vtluug]
+localrepository     = vtluug-local
+remoterepository    = vtluug-remote
+autorefresh         = 0.5
+quick               = 10
+
 ###########################
 ### Repositories
-# vt
+## vt
 [Repository vt-local]
 type            = Maildir
 localfolders        = ~/.mail/vt
@@ -64,11 +71,11 @@ folderfilter        = lambda folder: folder not in [
                 '[Gmail]/Chats',
             ]
 
-# walko
+## walko
 [Repository walko-local]
 type            = Maildir
-localfolders        = ~/.mail/walko
-nametrans        = lambda folder: {
+localfolders    = ~/.mail/walko
+nametrans       = lambda folder: {
                 'drafts':   '[Gmail]/Drafts',
                 'sent':     '[Gmail]/Sent Mail',
                 'flagged':  '[Gmail]/Starred',
@@ -98,7 +105,7 @@ folderfilter        = lambda folder: folder not in [
                 '[Gmail]/Chats',
             ]
 
-# gmail
+## gmail
 [Repository gmail-local]
 type            = Maildir
 localfolders    = ~/.mail/gmail
@@ -132,3 +139,20 @@ folderfilter        = lambda folder: folder not in [
                 '[Gmail]/Important',
                 '[Gmail]/Chats',
             ]
+
+## vtluug 
+[Repository vtluug-local]
+type            = Maildir
+localfolders    = ~/.mail/vtluug
+
+[Repository vtluug-remote]
+sslcacertfile       = /etc/ssl/certs/ca-certificates.crt
+maxconnections      = 1
+type                = IMAP
+remotehost          = acidburn.vtluug.org
+ssl                 = yes
+keepalive           = 60
+holdconnectionopen  = yes
+remoteuser          = pew 
+remotepasseval      = get_pass("vtluug")
+realdelete          = no

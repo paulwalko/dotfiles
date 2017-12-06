@@ -7,3 +7,4 @@ urxvt.shading:		30
 
 urxvt*font:		xft:DejaVuSansMono:pixelsize=14
 urxvt*boldFont:		xft:DejaVuSansMono:pixelsize=14
+#Xft.dpi: 180

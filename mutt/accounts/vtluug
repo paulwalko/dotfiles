@@ -1,0 +1,7 @@
+set from	    = "pew@vtluug.org"
+set imap_user   = pew
+set sendmail	= "/usr/bin/msmtp -a vtluug"
+set mbox	    = "+vtluug/archive"
+set postponed	= "+vtluug/drafts"
+
+color status	red default

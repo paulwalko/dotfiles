@@ -1,0 +1,8 @@
+Nov 22 16:36:32 host=smtp.gmail.com tls=on auth=on user=pwalko@vt.edu from=pwalko@vt.edu recipients=ocvt-officers-g@vt.edu mailsize=2822 smtpstatus=250 smtpmsg='250 2.0.0 OK 1511386642 l200sm2445213itl.36 - gsmtp' exitcode=EX_OK
+Dec 05 19:47:47 host=587 tls=on auth=on user=pew from=pew@vtluug.org recipients=giggybyte@vt.edu errormsg='cannot connect to 587, port 25: Invalid argument' exitcode=EX_TEMPFAIL
+Dec 05 19:49:18 host=587 tls=on auth=on user=pew from=pew@vtluug.org recipients=paul@walko.org errormsg='cannot connect to 587, port 25: Invalid argument' exitcode=EX_TEMPFAIL
+Dec 05 19:51:19 host=465 tls=on auth=on user=pew from=pew@vtluug.org recipients=paul@walko.org errormsg='cannot connect to 465, port 25: Invalid argument' exitcode=EX_TEMPFAIL
+Dec 05 19:52:20 host=587 tls=on auth=on user=pew from=pew@vtluug.org recipients=paul@walko.org errormsg='cannot connect to 587, port 25: Invalid argument' exitcode=EX_TEMPFAIL
+Dec 05 19:53:34 host=587 tls=on auth=on user=pew from=pew@vtluug.org recipients=paul@walko.org errormsg='cannot connect to 587, port 25: Invalid argument' exitcode=EX_TEMPFAIL
+Dec 05 19:53:42 host=acidburn.vtluug.org tls=on auth=on user=pew from=pew@vtluug.org recipients=paul@walko.org mailsize=65 smtpstatus=250 smtpmsg='250 2.0.0 Ok: queued as E0EF1140102' exitcode=EX_OK
+Dec 05 19:54:46 host=acidburn.vtluug.org tls=on auth=on user=pew from=pew@vtluug.org recipients=dws@vt.edu mailsize=289 smtpstatus=250 smtpmsg='250 2.0.0 Ok: queued as 5D21A140102' exitcode=EX_OK

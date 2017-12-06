@@ -2,16 +2,16 @@
 set realname		= "Paul Walko"
 set sendmail		= "/usr/bin/msmtp"
 set sendmail_wait	= 0
-set editor		= "vim"
+set editor		    = "vim"
 
 # General things
-set folder		= ~/.mail
+set folder		    = ~/.mail
 set mailcap_path	= ~/.mutt/mailcap
-set tmpdir		= ~/Desktop/temp
+set tmpdir		    = ~/Desktop/temp
 
 set wait_key		= no
 set mbox_type		= Maildir
-set timeout		= 3
+set timeout		    = 3
 set mail_check		= 0
 unset move
 set delete
@@ -45,9 +45,10 @@ bind attach <return>	view-mailcap
 macro pager		\Cu "|urlview<enter>" "call urlview to open links"
 
 # Account Settings
-set spoolfile		= "+vt/INBOX"
+set spoolfile		= "+vtluug/INBOX"
 
-mailboxes		+vt/INBOX \
+mailboxes   +vtluug/INBOX \
+            +vt/INBOX \
 			+walko/INBOX \
 			+gmail/INBOX \
 			+vt/9_fall17 \
@@ -60,6 +61,7 @@ mailboxes		+vt/INBOX \
 			+gmail/0_updates \
 			+gmail/1_social \
 			
-folder-hook vt/*	source ~/.mutt/accounts/vt
-folder-hook walko/*	source ~/.mutt/accounts/walko
-folder-hook gmail/*	source ~/.mutt/accounts/gmail
+folder-hook vt/*	    source ~/.mutt/accounts/vt
+folder-hook walko/*	    source ~/.mutt/accounts/walko
+folder-hook gmail/*	    source ~/.mutt/accounts/gmail
+folder-hook vtluug/*    source ~/.mutt/accounts/vtluug

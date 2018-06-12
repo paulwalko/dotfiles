@@ -6,11 +6,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'whatyouhide/vim-gotham'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/unite.vim'
+Plug 'devjoe/vim-codequery'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 """" General Settings
 "" leader
 let mapleader=","
+
 "" vim-airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -36,10 +40,20 @@ let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='jellybeans'
 
+"" vim-codequery
+nnoremap <leader>c :CodeQueryMenu Unite Full<CR>
+nnoremap <leader>s :CodeQuery Symbol<CR>
+nnoremap <leader>l :CodeQuery Call<CR>
+nnoremap <leader>r :CodeQuery Caller<CR>
+nnoremap <leader>e :CodeQuery Callee<CR>
+
 "" Set tabs to 4 spaces
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+"" Stupid backspace setting
+set backspace=2
 
 "" Remember location in file
 if has("autocmd")
@@ -59,7 +73,9 @@ colorscheme gotham256
 filetype plugin on
 
 "" Ctags
-set tags+=tags;/
+set path+=;/
+set tags+=c_tags;/
+" By default ^W ^] splits horizontal, so now ^] splits vertically
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "" Window stuff

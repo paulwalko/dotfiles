@@ -7,6 +7,7 @@ else
     export TERM='screen-256color'
 fi
 
+
 ### For local binaries (vim 8)
 export PATH=$HOME/.local/bin:$PATH
 
@@ -32,14 +33,18 @@ export GPG_TTY=$(tty)
 # Reduce delay swithing between normal & insert mode
 export KEYTIMEOUT=1
 
-# Use vim cli mode
+# Keybindings
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward 
-
-# ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ "$ID" = "rhel" ]; then
+        bindkey '\e[1~' beginning-of-line
+        bindkey '\e[4~' end-of-line
+        bindkey '\e[2~' insert-last-word
+    fi
+fi
 
 ## Dircolors
 eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
-
-echo 'CA' | cowsay

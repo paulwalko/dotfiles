@@ -41,3 +41,5 @@ bindkey '^w' backward-kill-word
 
 ## Dircolors
 eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
+
+echo 'CA' | cowsay

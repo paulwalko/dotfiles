@@ -37,12 +37,12 @@ export KEYTIMEOUT=1
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward 
 bindkey '^w' backward-kill-word
+bindkey '\e[2~' insert-last-word
 if [ -f /etc/os-release ]; then
     . /etc/os-release
     if [ "$ID" = "rhel" ]; then
         bindkey '\e[1~' beginning-of-line
         bindkey '\e[4~' end-of-line
-        bindkey '\e[2~' insert-last-word
     fi
 fi
 

@@ -8,7 +8,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/unite.vim'
 Plug 'devjoe/vim-codequery'
-Plug 'mileszs/ack.vim'
 call plug#end()
 
 """" General Settings

@@ -52,7 +52,7 @@ set shiftwidth=4
 set expandtab
 
 "" Stupid backspace setting
-set backspace=2
+"set backspace=2
 
 "" Remember location in file
 if has("autocmd")
@@ -74,6 +74,7 @@ filetype plugin on
 "" Ctags
 set path+=;/
 set tags+=c_tags;/
+set tags+=tags;/
 " By default ^W ^] splits horizontal, so now ^] splits vertically
 map <C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 

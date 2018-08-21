@@ -9,6 +9,7 @@ fi
 
 
 ### For local binaries (vim 8)
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 
 ## Path to your oh-my-zsh installation.

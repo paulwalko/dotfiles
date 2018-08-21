@@ -5,12 +5,12 @@ home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msm
 
 config_copy = 
 
-config_symlinks = termite dircolors-solarized
+config_symlinks = termite dircolors-solarized i3
 
 
 all: 
 
-local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh
+local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh i3
 
 remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh zprofile
 

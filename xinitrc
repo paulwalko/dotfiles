@@ -5,4 +5,7 @@ xsetroot -cursor_name left_ptr
 
 xbindkeys
 xmodmap ~/.Xmodmap
+#nm-applet &
+#discord &
+#slack &
 exec i3

@@ -52,7 +52,7 @@ set shiftwidth=4
 set expandtab
 
 "" Stupid backspace setting
-"set backspace=2
+set backspace=2
 
 "" Remember location in file
 if has("autocmd")

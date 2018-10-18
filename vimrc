@@ -66,10 +66,13 @@ set number
 set autoindent
 
 "" Colors
-syntax enable
 set background=dark
 colorscheme gotham256
+
+"" Language/filetype settings
+syntax enable
 filetype plugin on
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
 
 "" Ctags
 set path+=;/

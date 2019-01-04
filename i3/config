@@ -161,3 +161,4 @@ exec $HOME/.screenlayout/main.sh
 #workspace 1 output DP-0
 #workspace 2 output HDMI-0
 #workspace 3 output DVI-I-1
+bindsym $mod+Shift+f focus parent; fullscreen; focus child

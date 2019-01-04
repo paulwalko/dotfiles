@@ -8,4 +8,5 @@ xmodmap ~/.Xmodmap
 #nm-applet &
 #discord &
 #slack &
+compton &
 exec i3

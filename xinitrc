@@ -3,8 +3,8 @@
 [ -f ~/.Xresources ] && xrdb -merge .Xresources
 xsetroot -cursor_name left_ptr
 
-xbindkeys
-xmodmap ~/.Xmodmap
+#xbindkeys
+#xmodmap ~/.Xmodmap
 #nm-applet &
 #discord &
 #slack &

@@ -28,5 +28,6 @@
 "chromium --app-id=bikioccmkafdpakkkcpdbppfkghcmihk"
 	XF86Explorer
 
-"i3lock"
-	Super_L
+#"i3lock"
+#	Super_L
+

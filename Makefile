@@ -1,16 +1,18 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap oh-my-zsh bash_profile tmux.conf
+home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc zprofile zshrc vimrc vim Xmodmap oh-my-zsh bash_profile tmux.conf gitconfig
 
 config_copy = 
 
 config_symlinks = termite dircolors-solarized i3
 
+ssh_symlinks = config
 
-all: 
+gnupg_symlinks = gpg-agent.conf
 
-local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh i3
+
+local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh i3 gitconfig config gpg-agent.conf
 
 remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh zprofile tmux.conf
 
@@ -35,3 +37,15 @@ $(config_symlinks):
 	$(eval DESTDIR := $(shell dirname ~/.config/$@))
 	mkdir $(MKDIR_FLAGS) $(DESTDIR)
 	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.config/$@
+
+.PHONY: $(ssh_symlinks)
+$(ssh_symlinks):
+	$(eval DESTDIR := $(shell dirname ~/.ssh/$@))
+	mkdir $(MKDIR_FLAGS) $(DESTDIR)
+	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.ssh/$@
+
+.PHONY: $(gnupg_symlinks)
+$(gnupg_symlinks):
+	$(eval DESTDIR := $(shell dirname ~/.gnupg/$@))
+	mkdir $(MKDIR_FLAGS) $(DESTDIR)
+	test -e $(CURDIR)/$@ && ln $(LN_FLAGS) $(CURDIR)/$@ ~/.gnupg/$@

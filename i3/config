@@ -156,7 +156,7 @@ bar {
 }
 
 # Custom stats
-new_window 1pixel
+default_border pixel 1
 exec $HOME/.screenlayout/main.sh
 #workspace 1 output DP-0
 #workspace 2 output HDMI-0

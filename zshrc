@@ -1,40 +1,24 @@
-### ZSH Config
+source $HOME/.aliases
 
-## Set TERM for proper colors
+# Set TERM for proper tmux colors
 if [[ -z $TMUX ]]; then
     export TERM='xterm-256color'
 else
     export TERM='screen-256color'
 fi
 
-
-### For local binaries (vim 8)
-export PATH="$HOME/.cargo/bin:$PATH"
+# Local binaries
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export GOPATH=$HOME/go
 
-## Path to your oh-my-zsh installation.
+# ZSH
 export ZSH=$HOME/.oh-my-zsh
-
-## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="steeef"
-
-## Plugins
 plugins=(git history-substring-search)
-
 source $ZSH/oh-my-zsh.sh
 
-
-### User configuration
-source $HOME/.aliases
-
-## GPG Auth method
-export GPG_TTY=$(tty)
-
-##  Vim stuff
-# Reduce delay swithing between normal & insert mode
-export KEYTIMEOUT=1
-
-# Keybindings
+## Keybindings
 bindkey '^K' history-beginning-search-backward
 bindkey '^J' history-beginning-search-forward 
 bindkey '^w' backward-kill-word
@@ -47,11 +31,17 @@ if [ -f /etc/os-release ]; then
     fi
 fi
 
-## Dircolors
+# GPG/SSH
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# VIM
+## Reduce delay swithing between normal & insert mode
+export KEYTIMEOUT=1
+
+# Fancy tui dircolors
 eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/paul/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/paul/.local/share/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/paul/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/paul/.local/share/google-cloud-sdk/completion.zsh.inc'; fi

@@ -1,6 +1,0 @@
-set from	= "pwalko@vt.edu"
-set sendmail	= "/usr/bin/msmtp -a vt"
-set mbox	= "+vt/archive"
-set postponed	= "+vt/drafts"
-
-color status	green default

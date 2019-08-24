@@ -1,4 +1,1 @@
-alias irc="ssh -6 pew@paul.walko.org"
-alias irc-admin="ssh -6 ubuntu@paul.walko.org"
-alias hackbox="ssh -p2222 -6 paul@cabinet.walko.org"
 alias mutt="~/.mutt/runmutt.sh"

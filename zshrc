@@ -8,10 +8,11 @@ else
 fi
 
 # Customl binaries
-export PATH=/opt/minecraft-launcher:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export GOPATH=$HOME/go
+export PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
+export PATH=$HOME/.local/minecraft-launcher:$PATH
 
 # ZSH
 export ZSH=$HOME/.oh-my-zsh

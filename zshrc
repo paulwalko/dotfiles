@@ -7,7 +7,8 @@ else
     export TERM='screen-256color'
 fi
 
-# Local binaries
+# Customl binaries
+export PATH=/opt/minecraft-launcher:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export GOPATH=$HOME/go

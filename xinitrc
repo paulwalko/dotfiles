@@ -4,7 +4,7 @@
 xsetroot -cursor_name left_ptr
 
 xbindkeys
-#xmodmap ~/.Xmodmap
+xmodmap ~/.Xmodmap
 #nm-applet &
 #discord &
 #slack &

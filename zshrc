@@ -34,6 +34,7 @@ if [ -f /etc/os-release ]; then
 fi
 
 # GPG/SSH
+## Void: Install pcsclite, pcsc-ccid, gnupg2-scdaemon
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"

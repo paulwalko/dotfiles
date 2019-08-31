@@ -35,6 +35,7 @@ fi
 
 # GPG/SSH
 ## Void: Install pcsclite, pcsc-ccid, gnupg2-scdaemon
+## Yubico openpgp: https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"

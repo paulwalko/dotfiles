@@ -10,6 +10,7 @@
 "amixer -c 1 set Capture toggle"
 	XF86AudioMicMute
 
+# See http://haikarainen.github.io/light/ for udev rules
 "light -A 5"
 	XF86MonBrightnessUp
 

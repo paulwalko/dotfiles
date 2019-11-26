@@ -46,9 +46,9 @@ nnoremap <leader>l :CodeQuery Call<CR>
 nnoremap <leader>r :CodeQuery Caller<CR>
 nnoremap <leader>e :CodeQuery Callee<CR>
 
-"" Set tabs to 4 spaces
-set tabstop=4
-set shiftwidth=4
+"" Set tabs to 2 spaces
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 "" Stupid backspace setting

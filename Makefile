@@ -14,6 +14,8 @@ gnupg_symlinks = gpg-agent.conf
 
 local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh i3 gitconfig config gpg-agent.conf
 
+mac_local_install: zprofile zshrc vimrc vim dircolors-solarized oh-my-zsh gpg-agent.conf tmux.conf
+
 remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh zprofile tmux.conf
 
 noroot_install: bash_profile

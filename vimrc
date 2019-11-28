@@ -8,6 +8,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/unite.vim'
 Plug 'devjoe/vim-codequery'
+Plug 'fatih/vim-go'
 call plug#end()
 
 """" General Settings

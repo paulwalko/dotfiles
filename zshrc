@@ -37,14 +37,12 @@ fi
 ## Yubico openpgp: https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp
 # Run if NOT ssh session
 if [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ]; then
-  CONTINUE=true
   if [[ "$OSTYPE" == 'darwin'* ]]; then
     eval `ssh-agent`
     ssh-add -t 48h -s $OPENSC_LIBS/opensc-pkcs11.so
-    CONTINUE=false
   fi
 
-  if [[ "$CONTINUE" == true ]]; then
+  if [[ "$OSTYPE" != 'darwin'* || ("$?" != '0' && "$OSTYPE" == 'darwin'*) ]]; then
     unset SSH_AGENT_PID
     if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
       export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
@@ -61,11 +59,6 @@ if [[ "$OSTYPE" == 'darwin'* ]]; then
   export PATH=$PATH:$HOME/.linkerd2/bin
   export OPENSC_LIBS=/usr/local/lib
   source $HOME/.cargo/env
-  # ssh-agent config
-  eval `ssh-agent`
-  ssh-add -t 48h -s $OPENSC_LIBS/opensc-pkcs11.so
-  if [ "$?" -ne 0 ]; then
-    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
   eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
 fi

@@ -35,8 +35,8 @@ fi
 # GPG/SSH
 ## Void: Install pcsclite, pcsc-ccid, gnupg2-scdaemon
 ## Yubico openpgp: https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp
-# Run if NOT ssh session
-if [ -z "$SSH_CLIENT" ] || [ -z "$SSH_TTY" ]; then
+# Run if ALL variables are not set
+if [ -z "$SSH_CONNECTION" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
   if [[ "$OSTYPE" == 'darwin'* ]]; then
     eval `ssh-agent`
     ssh-add -t 48h -s $OPENSC_LIBS/opensc-pkcs11.so

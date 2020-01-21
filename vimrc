@@ -73,6 +73,7 @@ colorscheme gotham256
 syntax enable
 filetype plugin on
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
+autocmd FileType go setlocal tabstop=2 shiftwidth=2
 
 "" Ctags
 set path+=;/

@@ -10,9 +10,12 @@ fi
 # Customl binaries
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export GOPATH=$HOME/go
 export PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
 export PATH=$HOME/.local/minecraft-launcher:$PATH
+export PATH=/usr/local/go/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+export GOPATH=$HOME/go
+
 # ZSH
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='steeef'

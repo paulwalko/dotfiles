@@ -162,3 +162,5 @@ workspace 1 output HDMI-A-1
 workspace 2 output HDMI-A-0
 #workspace 3 output DVI-I-1
 bindsym $mod+Shift+f focus parent; fullscreen; focus child
+#i3lock
+bindsym $mod+x exec i3lock -c 000000

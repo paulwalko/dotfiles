@@ -7,14 +7,14 @@ else
   export TERM='screen-256color'
 fi
 
-# Customl binaries
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
-export PATH=$HOME/.local/minecraft-launcher:$PATH
-export PATH=/usr/local/go/bin:$PATH
-export PATH=$HOME/go/bin:$PATH
-export GOPATH=$HOME/go
+# Custom binaries
+if [[ -z $TMUX ]]; then
+  export PATH=$HOME/.local/bin:$PATH
+  export PATH=$HOME/.cargo/bin:$PATH
+  export GOPATH=$HOME/go
+  export PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
+  export PATH=$HOME/.local/minecraft-launcher:$PATH
+fi
 
 # ZSH
 export ZSH=$HOME/.oh-my-zsh
@@ -55,13 +55,18 @@ if [ -z "$SSH_CONNECTION" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
   fi
 fi
 
+# Also do this to prevent incorrect path ordering in tmux:
+# https://apple.stackexchange.com/questions/248813/tmux-always-modify-my-zsh-path
 if [[ "$OSTYPE" == 'darwin'* ]]; then
   export CLICOLOR=YES
-  export PATH=/usr/local/opt/python/libexec/bin:$PATH
-  export PATH=/usr/local/opt/ncurses/bin:$PATH
-  export PATH=$PATH:$HOME/.linkerd2/bin
+  export GEM_HOME=/Users/paul.walko/.gem
   export OPENSC_LIBS=/usr/local/lib
-  source $HOME/.cargo/env
+  if [[ -z $TMUX ]]; then
+    export PATH=$GEM_HOME/bin:$PATH
+    export PATH=$HOME/.linkerd2/bin:$PATH
+    export PATH=/usr/local/opt/python/libexec/bin:$PATH
+    export PATH=/usr/local/opt/ncurses/bin:$PATH
+  fi
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
   eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
 fi

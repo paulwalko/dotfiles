@@ -1,0 +1,7 @@
+set from      = "paul@seaturtle.pw"
+set imap_user = "paul@seaturtle.pw"
+set sendmail  = "/usr/bin/msmtp -a seaturtle"
+set mbox      = "+seaturtle/Archive"
+set postponed = "+seaturtle/Drafts"
+
+color status  blue default

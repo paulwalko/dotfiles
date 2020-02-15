@@ -1,0 +1,52 @@
+# Compose things
+set realname      = "Paul Walko"
+set sendmail      = "/usr/bin/msmtp"
+set sendmail_wait = 0
+set editor        = "vim"
+
+# General things
+set folder        = ~/.mail
+set mailcap_path  = ~/.mutt/mailcap
+set tmpdir        = /tmp
+
+set wait_key    = no
+set mbox_type   = Maildir
+set timeout     = 3
+set mail_check  = 0
+unset move
+set delete
+unset confirmappend
+set quit
+source ~/.mutt/colors
+set crypt_use_gpgme = yes
+
+# Sidebar thigns
+set sidebar_visible = yes
+set sidebar_width   = 14
+bind index <down>   sidebar-next
+bind index <up>     sidebar-prev
+bind index <right>  sidebar-open
+
+# Indexing
+bind index g      noop
+bind index gg     first-entry
+bind index G      last-entry
+bind index R      group-reply
+bind index <tab>  sync-mailbox
+
+# Pager bindings
+bind pager g          noop
+bind pager gg         top
+bind pager G          bottom
+bind pager R          group-reply
+bind attach <return>  view-mailcap
+
+# Macros
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+
+# Account Settings
+set spoolfile = +seaturtle/INBOX
+
+mailboxes +seaturtle/INBOX
+
+folder-hook seaturtle/* source ~/.mutt/accounts/seaturtle

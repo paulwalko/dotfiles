@@ -1,0 +1,23 @@
+xdg-utils
+
+xdg-utils provides the official utilities for managing MIME types and default applications according to the #XDG standard. Most importantly, it provides /usr/bin/xdg-open which many applications use to open a file with its default application. It is desktop-environment-independent in the sense that it attempts to use each environment's native default application tool and provides its own mechanism if no known environment is detected. Examples:
+
+# determine a file's MIME type
+$ xdg-mime query filetype photo.jpeg
+image/jpeg
+
+# determine the default application for a MIME type
+$ xdg-mime query default image/jpeg
+gimp.desktop
+
+# change the default application for a MIME type
+$ xdg-mime default feh.desktop image/jpeg
+
+# open a file with its default application
+$ xdg-open photo.jpeg
+
+# shortcut to open all web MIME types with a single application
+$ xdg-settings set default-web-browser firefox.desktop
+
+# shortcut for setting the default application for a URL scheme
+$ xdg-settings set default-url-scheme-handler irc xchat.desktop

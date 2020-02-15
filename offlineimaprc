@@ -1,158 +1,33 @@
 [general]
 ui              = ttyui
-accounts        = vt, walko, gmail, vtluug
+accounts        = seaturtle
 maxsyncaccounts = 4
 pythonfile      = ~/.mutt/offlineimap.py
 
 ############################
 ### Accounts
-# vt
-[Account vt]
-localrepository     = vt-local
-remoterepository    = vt-remote
-autorefresh         = 0.5
-quick               = 10
-
-# walko
-[Account walko]
-localrepository     = walko-local
-remoterepository    = walko-remote
-autorefresh         = 0.5
-quick               = 10
-
-# gmail
-[Account gmail]
-localrepository     = gmail-local
-remoterepository    = gmail-remote
-autorefresh         = 0.5
-quick               = 10
-
-# vtluug
-[Account vtluug]
-localrepository     = vtluug-local
-remoterepository    = vtluug-remote
-autorefresh         = 0.5
-quick               = 10
+# seaturtle
+[Account seaturtle]
+localrepository   = seaturtle-local
+remoterepository  = seaturtle-remote
+autorefresh       = 0.5
+quick             = 10
 
 ###########################
 ### Repositories
-## vt
-[Repository vt-local]
-type            = Maildir
-localfolders    = ~/.mail/vt
-nametrans       = lambda folder: {
-                      'drafts':   '[Gmail]/Drafts',
-                      'sent':     '[Gmail]/Sent Mail',
-                      'flagged':  '[Gmail]/Starred',
-                      'trash':    '[Gmail]/Trash',
-                      'archive':  '[Gmail]/All Mail',
-                  }.get(folder, folder)
+## seaturtle
+[Repository seaturtle-local]
+type          = Maildir
+localfolders  = ~/.mail/seaturtle
 
-[Repository vt-remote]
-sslcacertfile       = /etc/ssl/certs/ca-certificates.crt
-maxconnections      = 1
-type                = Gmail
-keepalive           = 60
-holdconnectionopen  = yes
-remoteuser          = pwalko@vt.edu
-remotepasseval      = get_pass("vt")
-realdelete          = no
-nametrans           = lambda folder: {
-                          '[Gmail]/Drafts':     'drafts',
-                          '[Gmail]/Sent Mail':  'sent',
-                          '[Gmail]/Starred':    'flagged',
-                          '[Gmail]/Trash':      'trash',
-                          '[Gmail]/All Mail':   'archive',
-                      }.get(folder, folder)
-folderfilter        = lambda folder: folder not in {
-                          '[Gmail]/Trash',
-                          '[Gmail]/Spam',
-                          '[Gmail]/Important',    
-                          '[Gmail]/Chats',
-                      }
-
-## walko
-[Repository walko-local]
-type            = Maildir
-localfolders    = ~/.mail/walko
-nametrans       = lambda folder: {
-                      'drafts':   '[Gmail]/Drafts',
-                      'sent':     '[Gmail]/Sent Mail',
-                      'flagged':  '[Gmail]/Starred',
-                      'trash':    '[Gmail]/Trash',
-                      'archive':  '[Gmail]/All Mail',
-                  }.get(folder, folder)
-
-[Repository walko-remote]
-sslcacertfile       = /etc/ssl/certs/ca-certificates.crt
-maxconnections      = 1
-type                = Gmail
-keepalive           = 60
-holdconnectionopen  = yes
-remoteuser          = paul@walko.org
-remotepasseval      = get_pass("walko")
-realdelete          = no
-nametrans           = lambda folder: {
-                          '[Gmail]/Drafts':       'drafts',
-                          '[Gmail]/Sent Mail':    'sent',
-                          '[Gmail]/Starred':      'flagged',
-                          '[Gmail]/Trash':        'trash',
-                          '[Gmail]/All Mail':     'archive',
-                      }.get(folder, folder)
-folderfilter        = lambda folder: folder not in {
-                          '[Gmail]/Trash',
-                          '[Gmail]/Important',    
-                          '[Gmail]/Chats',
-                      }
-
-## gmail
-[Repository gmail-local]
-type            = Maildir
-localfolders    = ~/.mail/gmail
-nametrans       = lambda folder: {
-                      'drafts':   '[Gmail]/Drafts',
-                      'sent':     '[Gmail]/Sent Mail',
-                      'flagged':  '[Gmail]/Starred',
-                      'trash':    '[Gmail]/Trash',
-                      'archive':  '[Gmail]/All Mail',
-                  }.get(folder, folder)
-
-[Repository gmail-remote]
-sslcacertfile       = /etc/ssl/certs/ca-certificates.crt
-maxconnections      = 1
-type                = Gmail
-keepalive           = 60
-holdconnectionopen  = yes
-remoteuser          = paulsw.pw@gmail.com
-remotepasseval      = get_pass("gmail")
-realdelete          = no
-nametrans           = lambda folder: {
-                          '[Gmail]/Drafts':       'drafts',
-                          '[Gmail]/Sent Mail':    'sent',
-                          '[Gmail]/Starred':      'flagged',
-                          '[Gmail]/Trash':        'trash',
-                          '[Gmail]/All Mail':     'archive',
-                      }.get(folder, folder)
-folderfilter        = lambda folder: folder not in {
-                          '[Gmail]/Trash',
-                          '[Gmail]/Spam',
-                          '[Gmail]/Important',
-                          '[Gmail]/Chats',
-                      }
-
-## vtluug 
-[Repository vtluug-local]
-type            = Maildir
-localfolders    = ~/.mail/vtluug
-
-[Repository vtluug-remote]
+[Repository seaturtle-remote]
 sslcacertfile       = /etc/ssl/certs/ca-certificates.crt
 maxconnections      = 1
 type                = IMAP
-remotehost          = acidburn.vtluug.org
+remotehost          = imap.mailbox.org
 ssl                 = yes
 keepalive           = 60
 holdconnectionopen  = yes
-remoteuser          = pew 
-remotepasseval      = get_pass("vtluug")
+remoteuser          = paul@seaturtle.pw
+remotepasseval      = get_pass("mailbox.org-paul@seaturtle.pw")
 realdelete          = no

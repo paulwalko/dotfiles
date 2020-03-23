@@ -9,10 +9,10 @@ shopt -s checkwinsize
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Generic exports
-if [[ -z $TMUX ]]; then
   export GOPATH=$HOME/go
   export PATH=$GOPATH/bin:$PATH
   export PATH=$HOME/.local/bin:$PATH
+if [[ -z $TMUX ]]; then
   export TERM='xterm-256color'
 else
   export TERM='screen-256color'

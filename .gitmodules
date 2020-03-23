@@ -1,27 +1,3 @@
-[submodule "vim/pack/plugins/opt/vim-gotham"]
-	path = vim/pack/plugins/opt/vim-gotham
-	url = https://github.com/whatyouhide/vim-gotham.git
-[submodule "vim/pack/plugins/start/vim-unimpaired"]
-	path = vim/pack/plugins/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
-[submodule "vim/pack/plugins/start/supertab"]
-	path = vim/pack/plugins/start/supertab
-	url = https://github.com/ervandew/supertab.git
-[submodule "vim/pack/plugins/start/syntastic"]
-	path = vim/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "vim/pack/plugins/start/vim-codequery"]
-	path = vim/pack/plugins/start/vim-codequery
-	url = https://github.com/devjoe/vim-codequery.git
-[submodule "vim/pack/plugins/start/unite.vim"]
-	path = vim/pack/plugins/start/unite.vim
-	url = https://github.com/Shougo/unite.vim.git
-[submodule "vim/pack/plugins/start/denite.nvim"]
-	path = vim/pack/plugins/start/denite.nvim
-	url = https://github.com/Shougo/denite.nvim.git

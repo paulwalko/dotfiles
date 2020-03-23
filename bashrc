@@ -1,50 +1,36 @@
-#source $HOME/.aliases
+# History
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=10000
+HISTFILESIZE=20000
+shopt -s checkwinsize
 
-# Set TERM for proper tmux colors
+# PS1
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# Generic exports
 if [[ -z $TMUX ]]; then
+  export GOPATH=$HOME/go
+  export PATH=$GOPATH/bin:$PATH
+  export PATH=$HOME/.local/bin:$PATH
   export TERM='xterm-256color'
 else
   export TERM='screen-256color'
 fi
 
-# Custom binaries
-if [[ -z $TMUX ]]; then
-  export PATH=$HOME/.local/bin:$PATH
-  export PATH=$HOME/.cargo/bin:$PATH
-  export GOPATH=$HOME/go
-  export PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
-  export PATH=$HOME/.local/minecraft-launcher:$PATH
-fi
-
-# ZSH
-export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME='steeef'
-plugins=(git history-substring-search docker docker-compose)
-source $ZSH/oh-my-zsh.sh
-
-## Keybindings
-bindkey '^K' history-beginning-search-backward
-bindkey '^J' history-beginning-search-forward 
-bindkey '^w' backward-kill-word
-bindkey '\e[2~' insert-last-word
-if [ -f /etc/os-release ]; then
-  . /etc/os-release
-  if [ "$ID" = 'rhel' ]; then
-    bindkey '\e[1~' beginning-of-line
-    bindkey '\e[4~' end-of-line
-  fi
-fi
-
 # GPG/SSH
 ## Void: Install pcsclite, pcsc-ccid, gnupg2-scdaemon
+## Debian: Install pcscd scdaemon
 ## Yubico openpgp: https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp
 # Run if ALL variables are not set
 if [ -z "$SSH_CONNECTION" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
+  # Check for macOS pkcs key
   if [[ "$OSTYPE" == 'darwin'* ]]; then
     eval `ssh-agent`
     ssh-add -t 48h -s $OPENSC_LIBS/opensc-pkcs11.so
   fi
 
+  # Run if not macOS or if macOS failed to load pkcs11 key
   if [[ "$OSTYPE" != 'darwin'* || ("$?" != '0' && "$OSTYPE" == 'darwin'*) ]]; then
     unset SSH_AGENT_PID
     if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
@@ -55,8 +41,9 @@ if [ -z "$SSH_CONNECTION" ] && [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
   fi
 fi
 
-# Also do this to prevent incorrect path ordering in tmux:
-# https://apple.stackexchange.com/questions/248813/tmux-always-modify-my-zsh-path
+# OS specific settings
+## macOS: do this to prevent incorrect path ordering in tmux:
+## https://apple.stackexchange.com/questions/248813/tmux-always-modify-my-zsh-path
 if [[ "$OSTYPE" == 'darwin'* ]]; then
   export CLICOLOR=YES
   export GEM_HOME=/Users/paul.walko/.gem
@@ -68,6 +55,7 @@ if [[ "$OSTYPE" == 'darwin'* ]]; then
     export PATH=/usr/local/opt/ncurses/bin:$PATH
   fi
 elif [[ "$OSTYPE" == 'linux-gnu' ]]; then
+  alias ls="ls --color=auto"
   eval `dircolors ~/.config/dircolors-solarized/dircolors.256dark`
 fi
 

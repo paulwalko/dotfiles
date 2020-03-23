@@ -1,7 +1,7 @@
 LN_FLAGS = -sfnv
 MKDIR_FLAGS = -pv
 
-home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim Xmodmap oh-my-zsh bash_profile tmux.conf gitconfig
+home_symlinks = aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt vimrc vim Xmodmap tmux.conf gitconfig bashrc
 
 config_copy = 
 
@@ -10,13 +10,11 @@ config_symlinks = termite dircolors-solarized i3
 gnupg_symlinks = gpg-agent.conf
 
 
-local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt zprofile zshrc vimrc vim termite dircolors-solarized oh-my-zsh i3 gitconfig gpg-agent.conf
+local_install: aliases Xresources xbindkeysrc xinitrc offlineimaprc urlview msmtprc mutt vimrc vim termite dircolors-solarized i3 gitconfig gpg-agent.conf bashrc
 
-mac_local_install: zprofile zshrc vimrc vim dircolors-solarized oh-my-zsh gpg-agent.conf tmux.conf
+mac_local_install: vimrc vim dircolors-solarized gpg-agent.conf tmux.conf bashrc
 
-remote_install: vim vimrc dircolors-solarized zshrc aliases oh-my-zsh zprofile tmux.conf
-
-noroot_install: bash_profile
+remote_install: vim vimrc dircolors-solarized aliases tmux.conf
 
 ctrl_install: Xmodmap
 

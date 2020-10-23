@@ -47,7 +47,7 @@ nnoremap <leader>l :CodeQuery Call<CR>
 nnoremap <leader>r :CodeQuery Caller<CR>
 nnoremap <leader>e :CodeQuery Callee<CR>
 
-"" Set tabs to 2 spaces
+"" Set default tabs to 2 spaces
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -72,9 +72,9 @@ colorscheme gotham256
 
 "" Language/filetype settings
 syntax enable
-filetype plugin on
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd FileType go setlocal tabstop=2 shiftwidth=2
+autocmd FileType py setlocal tabstop=4 shiftwidth=4 expandtab
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 expandtab
 
 "" Ctags
 set path+=;/

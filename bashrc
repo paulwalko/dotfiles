@@ -63,6 +63,7 @@ if [[ "$OSTYPE" == 'darwin'* ]]; then
   if [[ -z $TMUX ]]; then
     export PATH=$GEM_HOME/bin:$PATH
     export PATH=$HOME/.linkerd2/bin:$PATH
+    export PATH=$HOME/.rvm/bin:$PATH
     export PATH=/usr/local/opt/python/libexec/bin:$PATH
     export PATH=/usr/local/opt/ncurses/bin:$PATH
   fi

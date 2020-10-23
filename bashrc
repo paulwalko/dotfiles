@@ -9,13 +9,25 @@ shopt -s checkwinsize
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # Generic exports
-  export GOPATH=$HOME/go
-  export PATH=$GOPATH/bin:$PATH
-  export PATH=$HOME/.local/bin:$PATH
+export EDITOR=vim
+export GOPATH=$HOME/go
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completionexport PATH=$GOPATH/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/share/google-cloud-sdk/bin:$PATH
+export PATH=/usr/NX/bin:$PATH
+export PATH=/opt/waterfox:$PATH
 if [[ -z $TMUX ]]; then
   export TERM='xterm-256color'
 else
   export TERM='screen-256color'
+fi
+
+# Bash completion
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
 
 # GPG/SSH
@@ -62,3 +74,5 @@ fi
 # VIM
 ## Reduce delay swithing between normal & insert mode
 export KEYTIMEOUT=1
+
+[[ -s "/home/paul/.gvm/scripts/gvm" ]] && source "/home/paul/.gvm/scripts/gvm"

@@ -101,3 +101,6 @@ noremap <leader>7 : 7b<CR>
 noremap <leader>8 : 8b<CR>
 noremap <leader>9 : 9b<CR>
 noremap <leader>10 : 10b<CR>
+
+"" Scroll stuff
+set mouse=a
